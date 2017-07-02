@@ -1,4 +1,9 @@
 # frozen_string_literal: false
+
+require 'rdoc/rd/block_parser'
+require 'rdoc/rd/inline_parser'
+require 'rdoc/rd/inline'
+
 ##
 # RDoc::RD implements the RD format from the rdtool gem.
 #
@@ -91,10 +96,6 @@ class RDoc::RD
 
     document
   end
-
-  autoload :BlockParser,  'rdoc/rd/block_parser'
-  autoload :InlineParser, 'rdoc/rd/inline_parser'
-  autoload :Inline,       'rdoc/rd/inline'
 
 end
 

@@ -1,6 +1,8 @@
 # frozen_string_literal: false
 require 'cgi'
 
+require 'rdoc/context/section'
+
 ##
 # A Context is something that can hold modules, classes, methods, attributes,
 # aliases, requires, and includes. Classes, modules, and files are all
@@ -1217,7 +1219,5 @@ class RDoc::Context < RDoc::CodeObject
 
     klass
   end
-
-  autoload :Section, 'rdoc/context/section'
 
 end

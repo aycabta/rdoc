@@ -1,4 +1,9 @@
 # frozen_string_literal: false
+
+require 'rdoc/stats/quiet'
+require 'rdoc/stats/normal'
+require 'rdoc/stats/verbose'
+
 ##
 # RDoc statistics collector which prints a summary and report of a project's
 # documentation totals.
@@ -453,10 +458,6 @@ class RDoc::Stats
 
     [params.length, undoc]
   end
-
-  autoload :Quiet,   'rdoc/stats/quiet'
-  autoload :Normal,  'rdoc/stats/normal'
-  autoload :Verbose, 'rdoc/stats/verbose'
 
 end
 

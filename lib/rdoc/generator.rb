@@ -1,4 +1,12 @@
 # frozen_string_literal: false
+
+require 'rdoc/generator/markup'
+
+require 'rdoc/generator/darkfish'
+require 'rdoc/generator/json_index'
+require 'rdoc/generator/ri'
+require 'rdoc/generator/pot'
+
 ##
 # RDoc uses generators to turn parsed source code in the form of an
 # RDoc::CodeObject tree into some form of output.  RDoc comes with the HTML
@@ -40,12 +48,4 @@
 # your desired output format.
 
 module RDoc::Generator
-
-  autoload :Markup,   'rdoc/generator/markup'
-
-  autoload :Darkfish,  'rdoc/generator/darkfish'
-  autoload :JsonIndex, 'rdoc/generator/json_index'
-  autoload :RI,        'rdoc/generator/ri'
-  autoload :POT,       'rdoc/generator/pot'
-
 end

@@ -1,6 +1,67 @@
 # frozen_string_literal: false
 $DEBUG_RDOC = nil
 
+require 'rdoc/rdoc'
+
+require 'rdoc/test_case'
+
+require 'rdoc/cross_reference'
+require 'rdoc/erbio'
+require 'rdoc/erb_partial'
+require 'rdoc/encoding'
+require 'rdoc/generator'
+require 'rdoc/options'
+require 'rdoc/parser'
+require 'rdoc/servlet'
+require 'rdoc/ri'
+require 'rdoc/stats'
+require 'rdoc/store'
+require 'rdoc/task'
+require 'rdoc/text'
+
+require 'rdoc/markdown'
+require 'rdoc/markup'
+require 'rdoc/rd'
+require 'rdoc/tom_doc'
+
+require 'rdoc/known_classes'
+
+require 'rdoc/ruby_lex'
+require 'rdoc/ruby_token'
+require 'rdoc/token_stream'
+
+require 'rdoc/comment'
+
+require 'rdoc/i18n'
+
+# code objects
+#
+# We represent the various high-level code constructs that appear in Ruby
+# programs: classes, modules, methods, and so on.
+require 'rdoc/code_object'
+
+require 'rdoc/context'
+require 'rdoc/top_level'
+
+require 'rdoc/anon_class'
+require 'rdoc/class_module'
+require 'rdoc/normal_class'
+require 'rdoc/normal_module'
+require 'rdoc/single_class'
+
+require 'rdoc/alias'
+require 'rdoc/any_method'
+require 'rdoc/method_attr'
+require 'rdoc/ghost_method'
+require 'rdoc/meta_method'
+require 'rdoc/attr'
+
+require 'rdoc/constant'
+require 'rdoc/mixin'
+require 'rdoc/include'
+require 'rdoc/extend'
+require 'rdoc/require'
+
 # :main: README.rdoc
 
 ##
@@ -122,66 +183,5 @@ module RDoc
       require 'yaml'
     end
   end
-
-  autoload :RDoc,           'rdoc/rdoc'
-
-  autoload :TestCase,       'rdoc/test_case'
-
-  autoload :CrossReference, 'rdoc/cross_reference'
-  autoload :ERBIO,          'rdoc/erbio'
-  autoload :ERBPartial,     'rdoc/erb_partial'
-  autoload :Encoding,       'rdoc/encoding'
-  autoload :Generator,      'rdoc/generator'
-  autoload :Options,        'rdoc/options'
-  autoload :Parser,         'rdoc/parser'
-  autoload :Servlet,        'rdoc/servlet'
-  autoload :RI,             'rdoc/ri'
-  autoload :Stats,          'rdoc/stats'
-  autoload :Store,          'rdoc/store'
-  autoload :Task,           'rdoc/task'
-  autoload :Text,           'rdoc/text'
-
-  autoload :Markdown,       'rdoc/markdown'
-  autoload :Markup,         'rdoc/markup'
-  autoload :RD,             'rdoc/rd'
-  autoload :TomDoc,         'rdoc/tom_doc'
-
-  autoload :KNOWN_CLASSES,  'rdoc/known_classes'
-
-  autoload :RubyLex,        'rdoc/ruby_lex'
-  autoload :RubyToken,      'rdoc/ruby_token'
-  autoload :TokenStream,    'rdoc/token_stream'
-
-  autoload :Comment,        'rdoc/comment'
-
-  autoload :I18n,           'rdoc/i18n'
-
-  # code objects
-  #
-  # We represent the various high-level code constructs that appear in Ruby
-  # programs: classes, modules, methods, and so on.
-  autoload :CodeObject,     'rdoc/code_object'
-
-  autoload :Context,        'rdoc/context'
-  autoload :TopLevel,       'rdoc/top_level'
-
-  autoload :AnonClass,      'rdoc/anon_class'
-  autoload :ClassModule,    'rdoc/class_module'
-  autoload :NormalClass,    'rdoc/normal_class'
-  autoload :NormalModule,   'rdoc/normal_module'
-  autoload :SingleClass,    'rdoc/single_class'
-
-  autoload :Alias,          'rdoc/alias'
-  autoload :AnyMethod,      'rdoc/any_method'
-  autoload :MethodAttr,     'rdoc/method_attr'
-  autoload :GhostMethod,    'rdoc/ghost_method'
-  autoload :MetaMethod,     'rdoc/meta_method'
-  autoload :Attr,           'rdoc/attr'
-
-  autoload :Constant,       'rdoc/constant'
-  autoload :Mixin,          'rdoc/mixin'
-  autoload :Include,        'rdoc/include'
-  autoload :Extend,         'rdoc/extend'
-  autoload :Require,        'rdoc/require'
 
 end

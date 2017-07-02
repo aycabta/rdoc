@@ -1,4 +1,47 @@
 # frozen_string_literal: false
+
+require 'rdoc/markup/parser'
+require 'rdoc/markup/pre_process'
+
+# Inline markup classes
+require 'rdoc/markup/attr_changer'
+require 'rdoc/markup/attr_span'
+require 'rdoc/markup/attributes'
+require 'rdoc/markup/attribute_manager'
+require 'rdoc/markup/special'
+
+# RDoc::Markup AST
+require 'rdoc/markup/blank_line'
+require 'rdoc/markup/block_quote'
+require 'rdoc/markup/document'
+require 'rdoc/markup/hard_break'
+require 'rdoc/markup/heading'
+require 'rdoc/markup/include'
+require 'rdoc/markup/indented_paragraph'
+require 'rdoc/markup/list'
+require 'rdoc/markup/list_item'
+require 'rdoc/markup/paragraph'
+require 'rdoc/markup/raw'
+require 'rdoc/markup/rule'
+require 'rdoc/markup/verbatim'
+
+# Formatters
+require 'rdoc/markup/formatter'
+require 'rdoc/markup/formatter_test_case'
+require 'rdoc/markup/text_formatter_test_case'
+
+require 'rdoc/markup/to_ansi'
+require 'rdoc/markup/to_bs'
+require 'rdoc/markup/to_html'
+require 'rdoc/markup/to_html_crossref'
+require 'rdoc/markup/to_html_snippet'
+require 'rdoc/markup/to_label'
+require 'rdoc/markup/to_markdown'
+require 'rdoc/markup/to_rdoc'
+require 'rdoc/markup/to_table_of_contents'
+require 'rdoc/markup/to_test'
+require 'rdoc/markup/to_tt_only'
+
 ##
 # RDoc::Markup parses plain text documents and attempts to decompose them into
 # their constituent parts.  Some of these parts are high-level: paragraphs,
@@ -823,48 +866,6 @@ https://github.com/rdoc/rdoc/issues
 
     document.accept formatter
   end
-
-  autoload :Parser,                'rdoc/markup/parser'
-  autoload :PreProcess,            'rdoc/markup/pre_process'
-
-  # Inline markup classes
-  autoload :AttrChanger,           'rdoc/markup/attr_changer'
-  autoload :AttrSpan,              'rdoc/markup/attr_span'
-  autoload :Attributes,            'rdoc/markup/attributes'
-  autoload :AttributeManager,      'rdoc/markup/attribute_manager'
-  autoload :Special,               'rdoc/markup/special'
-
-  # RDoc::Markup AST
-  autoload :BlankLine,             'rdoc/markup/blank_line'
-  autoload :BlockQuote,            'rdoc/markup/block_quote'
-  autoload :Document,              'rdoc/markup/document'
-  autoload :HardBreak,             'rdoc/markup/hard_break'
-  autoload :Heading,               'rdoc/markup/heading'
-  autoload :Include,               'rdoc/markup/include'
-  autoload :IndentedParagraph,     'rdoc/markup/indented_paragraph'
-  autoload :List,                  'rdoc/markup/list'
-  autoload :ListItem,              'rdoc/markup/list_item'
-  autoload :Paragraph,             'rdoc/markup/paragraph'
-  autoload :Raw,                   'rdoc/markup/raw'
-  autoload :Rule,                  'rdoc/markup/rule'
-  autoload :Verbatim,              'rdoc/markup/verbatim'
-
-  # Formatters
-  autoload :Formatter,             'rdoc/markup/formatter'
-  autoload :FormatterTestCase,     'rdoc/markup/formatter_test_case'
-  autoload :TextFormatterTestCase, 'rdoc/markup/text_formatter_test_case'
-
-  autoload :ToAnsi,                'rdoc/markup/to_ansi'
-  autoload :ToBs,                  'rdoc/markup/to_bs'
-  autoload :ToHtml,                'rdoc/markup/to_html'
-  autoload :ToHtmlCrossref,        'rdoc/markup/to_html_crossref'
-  autoload :ToHtmlSnippet,         'rdoc/markup/to_html_snippet'
-  autoload :ToLabel,               'rdoc/markup/to_label'
-  autoload :ToMarkdown,            'rdoc/markup/to_markdown'
-  autoload :ToRdoc,                'rdoc/markup/to_rdoc'
-  autoload :ToTableOfContents,     'rdoc/markup/to_table_of_contents'
-  autoload :ToTest,                'rdoc/markup/to_test'
-  autoload :ToTtOnly,              'rdoc/markup/to_tt_only'
 
 end
 

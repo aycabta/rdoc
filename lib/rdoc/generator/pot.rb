@@ -1,4 +1,9 @@
 # frozen_string_literal: false
+
+require 'rdoc/generator/pot/message_extractor'
+require 'rdoc/generator/pot/po'
+require 'rdoc/generator/pot/po_entry'
+
 ##
 # Generates a POT file.
 #
@@ -90,9 +95,5 @@ class RDoc::Generator::POT
     extractor = MessageExtractor.new(@store)
     extractor.extract
   end
-
-  autoload :MessageExtractor, 'rdoc/generator/pot/message_extractor'
-  autoload :PO,               'rdoc/generator/pot/po'
-  autoload :POEntry,          'rdoc/generator/pot/po_entry'
 
 end

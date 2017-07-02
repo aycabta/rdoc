@@ -1,6 +1,17 @@
 # -*- coding: us-ascii -*-
 # frozen_string_literal: false
 
+# simple must come first in order to show up last in the parsers list
+require 'rdoc/parser/simple'
+require 'rdoc/parser/c'
+require 'rdoc/parser/changelog'
+require 'rdoc/parser/markdown'
+require 'rdoc/parser/rd'
+require 'rdoc/parser/ruby'
+
+require 'rdoc/parser/ruby_tools'
+require 'rdoc/parser/text'
+
 ##
 # A parser is simple a class that subclasses RDoc::Parser and implements #scan
 # to fill in an RDoc::TopLevel with parsed data.
@@ -288,15 +299,4 @@ class RDoc::Parser
     @preprocess.options = @options
   end
 
-  autoload :RubyTools, 'rdoc/parser/ruby_tools'
-  autoload :Text,      'rdoc/parser/text'
-
 end
-
-# simple must come first in order to show up last in the parsers list
-require 'rdoc/parser/simple'
-require 'rdoc/parser/c'
-require 'rdoc/parser/changelog'
-require 'rdoc/parser/markdown'
-require 'rdoc/parser/rd'
-require 'rdoc/parser/ruby'
