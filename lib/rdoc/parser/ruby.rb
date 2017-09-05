@@ -1536,7 +1536,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
       when :on_comment, :on_embdoc then
         @read.pop
         if :on_nl == end_token[:kind] and "\n" == tk[:text][-1] and
-          (!continue or (RDoc::RipperStateLex::EXPR_LABEL & tk[:state]) != 0) then
+          (!continue and (RDoc::RipperStateLex::EXPR_LABEL & tk[:state]) == 0) then
           if method && method.block_params.nil? then
             unget_tk tk
             read_documentation_modifiers method, modifiers
