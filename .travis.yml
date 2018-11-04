@@ -4,17 +4,11 @@ before_install:
   - gem update bundler
 language: ruby
 rvm:
-  - 2.3.8
-  - 2.4.5
-  - 2.5.3
   - ruby-head
-  - jruby-9.1.17.0
-  - jruby-9.2.0.0
 env:
   global:
     NOBENCHMARK=1
-script: rake
-matrix:
-  allow_failures:
-    - rvm: jruby-9.1.17.0
-    - rvm: jruby-9.2.0.0
+script:
+  - ruby -rracc -e 'p Racc::VERSION'
+  - patch -p1 -d /home/travis/.rvm/gems/ruby-head/gems/racc-1.4.14 < debug.patch
+  - rake

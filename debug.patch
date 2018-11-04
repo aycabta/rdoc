@@ -1,0 +1,13 @@
+diff --git a/lib/racc/grammarfileparser.rb b/lib/racc/grammarfileparser.rb
+index 3cfaf7d..24587e8 100644
+--- a/lib/racc/grammarfileparser.rb
++++ b/lib/racc/grammarfileparser.rb
+@@ -201,6 +201,7 @@
+       else
+         v = val.inspect
+       end
++      raise CompileError, "#{location()}: unexpected token '#{v}'!!!!!!!\n#{caller.join(%Q{\n})}\n#{tok.inspect}\n#{val.inspect}\n#{_values.inspect}\n"
+       raise CompileError, "#{location()}: unexpected token '#{v}'"
+     end
+ 
+Only in ./racc: racc-1.4.14

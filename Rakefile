@@ -63,7 +63,12 @@ parsed_files = PARSER_FILES.map do |parser_file|
     if parser_file =~ /\.ry\z/ # need racc
       racc = Gem.bin_path 'racc', 'racc'
       rb_file = parser_file.gsub(/\.ry\z/, ".rb")
-      ruby "#{racc} -l -o #{rb_file} #{parser_file}"
+      begin
+        ruby "#{racc} -l -v -o #{rb_file} #{parser_file}"
+      rescue => e
+        puts `cat #{parser_file.gsub(/\.ry\z/, ".output")}`
+        fail 1
+      end
       open(rb_file, 'r+') do |f|
         newtext = "# frozen_string_literal: true\n#{f.read}"
         f.rewind
